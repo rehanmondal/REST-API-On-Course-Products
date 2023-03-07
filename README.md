@@ -14,7 +14,23 @@
 ### Overview 
 ### Schema
 ### Run
-### Root End Points
+### Root End Points    
+    GET 	-> 	http://127.0.0.1:5000/
+    GET 	-> 	http://127.0.0.1:5000/product/getall
+    POST	->	http://127.0.0.1:5000/product/addone
+    PUT	->	http://127.0.0.1:5000/product/update
+    PATCH	->	http://127.0.0.1:5000/product/patch/<id>
+                    http://127.0.0.1:5000/product/patch/12    
+    DEL	->	http://127.0.0.1:5000/product/delete/<id>
+                    http://127.0.0.1:5000/product/delete/14
+    GET	->	http://127.0.0.1:5000/product/getall/limit/<limit>/page/<page>
+                    http://127.0.0.1:5000/product/getall/limit/10/page/2
+    GET	->	http://127.0.0.1:5000/product/getall/<subject>
+                    http://127.0.0.1:5000/product/getall/C++
+    GET	->	http://127.0.0.1:5000/product/filterby_price 
+    GET	->	http://127.0.0.1:5000/product/filterby_price_&_subject
+    GET	->	http://127.0.0.1:5000/product/sortby_price_lowTohigh
+   
 ### HTTP Response
 ### HTTP Verbs
 ### Pagination
