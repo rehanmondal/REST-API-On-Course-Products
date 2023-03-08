@@ -18,7 +18,7 @@ Since REST APIs use standard HTTP verbs and with respect to specified response c
 it is easy to build API with this architechture. This article states how to build a REST API using Flask and MySQL with refference to the HTTP status codes, 
 headers and a json body parameter whcih is basically the response body of the particular requests.
 Whenever we send a request to the API, it will specify an HTTP method and a path. 
-To make a request, at first we have to choose that particular the HTTP method and the path for the operation that we want to use. 
+To make a request, at first we have to choose that particular HTTP method and the path for the operation that we want to use. 
 For example, the "../product/getall" the operation uses the GET method returns a json response. 
 
 ### Schema
@@ -162,7 +162,6 @@ Implementation on Queue.
 
 ### Comments
 Hope you like this article and let me suggest if there would be any suitable modification required.I am still working on this api (Implementing JWT to encode with token and other request handlings) and after completing I will be hosted it with all Authentication parameters.Till then Stay Connected. Thanks to Connect! &nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/125151906/223216986-3de16a0a-8e1c-4cc7-b180-386ec4b4da5c.png" width="40px;" height="32px;">
-
 
 
 ________________________________________________________________________________________________________________________________________________________
