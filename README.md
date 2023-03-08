@@ -8,6 +8,7 @@
 - [HTTP Verbs](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [HTTP Responses ](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [Pagination](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [JSON type Responses](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [CORS](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [Technology Used](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 
@@ -60,7 +61,6 @@ The MySQL server application will respond with the requested information and wil
 <th>Description</th>
 </tr></thead>
 <tbody>
-
 <tr>
 <td><code>GET</code></td>
 <td>In this particular project it is used to retrieves all resources <code>../product/getall</code>, with filter <code>../product/filterby_price</code>,
@@ -84,7 +84,11 @@ with sort by price<code>../product/sortby_price_lowTohigh</code> <br><br></td>
 
 <tr>
 <td><code>DELETE</code></td>
-<td>Deletes data with the given product id. <code>../product/delete/<id></code> <br><br></td>
+<td>Deletes data with the given product id. <code>../product/delete/{id}</code> <br><br></td>
+</tr>
+<tr>
+<td><code>HEADERS</code></td>
+<td>Content-Type : application/json<br><br></td>
 </tr>
 
 </tbody>
@@ -100,8 +104,55 @@ Successful responses (200 – 299)
     204 -> No Content - Nothing to return from database in respect of that request.
 
 ### Pagination
-### CORS (Cross origin resource sharing)
-### Comments
+When the response has too many values to show, the pagination function makes easy to provide limited selcted data in a page,
+it return a subset of the response.In this case request additional pages of data.The endpoint supports the page and limit parameter, which control the number of results returned on a page. <code>../product/getall/limit/{limit}/page/{page} </code>
+
+### CORS and JWT (Cross origin resource sharing & Json Web Token)
+Implementation on Queue.
+
+### JSON type Responses examples :<br>
+##### METHOD : http://127.0.0.1:5000/product/getall
+        {
+            "products": [
+                {
+                    "core_subject": "Python",
+                    "course_name": "Server Side Programm",
+                    "duration": "45 days",
+                    "enquiry": "9007045632",
+                    "id": 1,
+                    "payment_type": "one time",
+                    "price": "7000"
+                },
+         
+                {
+                    "core_subject": "Data Science",
+                    "course_name": "Big Dream in Data Sc",
+                    "duration": "90 days",
+                    "enquiry": "7894121478",
+                    "id": 3,
+                    "payment_type": "Lump sum",
+                    "price": "7000"
+                  }
+            ]
+        }
+
+##### METHOD : http://127.0.0.1:5000/product/filterby_price_&_subject
+        body inputs : 
+            - subject : python
+            - price : 9000
+        {
+            "products": [
+                {
+                    "core_subject": "Python",
+                    "course_name": "Python with Flask",
+                    "duration": "90 days",
+                    "enquiry": "6290624578",
+                    "id": 9,
+                    "payment_type": "Monthly",
+                    "price": "9000"
+                }
+            ]
+        }
 
 ### Technology Used
 <p><img src="https://user-images.githubusercontent.com/125151906/223213095-daa36254-ec9b-41f2-a5a9-5449498b21e3.png" width="100" height="60">&nbsp;&nbsp;
@@ -110,7 +161,7 @@ Successful responses (200 – 299)
 <img src="https://user-images.githubusercontent.com/125151906/223213536-d1ed5975-4822-4014-bf13-724fefef781e.png" width="100" height="60">&nbsp;&nbsp;</p>
 
 ### Comments
-Hope you like this article and let me suggest if there would be any suitable modification required.I am still working on this api (Implementing JWT to encode with token and other request handlings) and after completing I will be hosted it with all Authentication parameters.Till then Stay Connected. Thanks to Connect ! &nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/125151906/223216986-3de16a0a-8e1c-4cc7-b180-386ec4b4da5c.png" width="40px;" height="32px;">
+Hope you like this article and let me suggest if there would be any suitable modification required.I am still working on this api (Implementing JWT to encode with token and other request handlings) and after completing I will be hosted it with all Authentication parameters.Till then Stay Connected. Thanks to Connect! &nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/125151906/223216986-3de16a0a-8e1c-4cc7-b180-386ec4b4da5c.png" width="40px;" height="32px;">
 
 
 
