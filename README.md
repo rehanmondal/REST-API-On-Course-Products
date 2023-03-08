@@ -5,15 +5,36 @@
 - [Schema](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [Run cmd](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [Root End Points](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
-- [HTTP Response](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [HTTP Verbs](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [HTTP Responses ](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [Pagination](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [CORS](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 - [Technology Used](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
 
 ### Overview 
+
+Since REST APIs use standard HTTP verbs and with respect to specified response codes, 
+it is easy to build API with this architechture. This article states how to build a REST API using Flask and MySQL with refference to the HTTP status codes, 
+headers and a json body parameter whcih is basically the response body of the particular requests.
+Whenever we send a request to the API, it will specify an HTTP method and a path. 
+To make a request, at first we have to choose that particular the HTTP method and the path for the operation that we want to use. 
+For example, the "../product/getall" the operation uses the GET method returns a json response. 
+
 ### Schema
+The schema contains tables named "courses" that store information about the coursec products in differect attributes
+The MySQL server application will respond with the requested information and will appear on clients' side.
 ### Run
+    install requirements :pip install -r .\requirements.txt
+##### Import .sql to database :<br>  	
+    
+    mysql> use db_name;
+ 	mysql> source file_name.sql;
+    
+##### Versions :<br>  
+    Python 3.10.4
+    Flask 2.2.2
+    Werkzeug 2.2.2
+    
 ### Root End Points    
     GET 	-> 	http://127.0.0.1:5000/
     GET 	-> 	http://127.0.0.1:5000/product/getall
@@ -31,8 +52,19 @@
     GET	->	http://127.0.0.1:5000/product/filterby_price_&_subject
     GET	->	http://127.0.0.1:5000/product/sortby_price_lowTohigh
    
-### HTTP Response
 ### HTTP Verbs
+
+
+### HTTP Responses
+HTTP response status codes indicates the specific HTTP request has been successfully completed. 
+Successful responses (200 – 299) 
+#### In this project the following status codes has beed used :
+    200 -> OK - The query executed succesfully and completed the required task.
+    201 -> Created - Products has been added to database succesfully.
+    202 -> Accepted - It is used whenever the query is correct and also accepted but their is nothing to do, For eg. nothing to update, nothing to delete.
+    204 -> No Content - Nothing to return from database in respect of that request.
+
+
 ### Pagination
 ### CORS (Cross origin resource sharing)
 ### Comments
