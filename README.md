@@ -53,7 +53,42 @@ The MySQL server application will respond with the requested information and wil
     GET	->	http://127.0.0.1:5000/product/sortby_price_lowTohigh
    
 ### HTTP Verbs
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
 
+<tr>
+<td><code>GET</code></td>
+<td>In this particular project it is used to retrieves all resources <code>../product/getall</code>, with filter <code>../product/filterby_price</code>,
+with sort by price<code>../product/sortby_price_lowTohigh</code> <br><br></td>
+</tr>
+
+<tr>
+<td><code>POST</code></td>
+<td>Used to add new product.This route is called with full body detailed parameters /product/delete/<id><br><br></td>
+</tr>
+
+<tr>
+<td><code>PUT</code></td>
+<td>Updates the whole resourse. The request will be send with the full body parameters<code>../product/update</code> <br><br></td>
+</tr>
+
+<tr>
+<td><code>PATCH</code></td>
+<td>Updates partial data without changing the whole. Requested will be send with selected body parameters <code>..product/patch/<id></code><br><br>
+</tr>
+
+<tr>
+<td><code>DELETE</code></td>
+<td>Deletes data with the given product id. <code>../product/delete/<id></code> <br><br></td>
+</tr>
+
+</tbody>
+</table>
 
 ### HTTP Responses
 HTTP response status codes indicates the specific HTTP request has been successfully completed. 
@@ -63,7 +98,6 @@ Successful responses (200 – 299)
     201 -> Created - Products has been added to database succesfully.
     202 -> Accepted - It is used whenever the query is correct and also accepted but their is nothing to do, For eg. nothing to update, nothing to delete.
     204 -> No Content - Nothing to return from database in respect of that request.
-
 
 ### Pagination
 ### CORS (Cross origin resource sharing)
